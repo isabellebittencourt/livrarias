@@ -1,5 +1,5 @@
-const mongoose = require ('mongoose');
-const categorieSchema = require ('./categorieSchema');
+const mongoose = require('mongoose');
+const categorieSchema = require ('../models/categorieSchema');
 
 var book = new mongoose.Schema ({
     titulo: {

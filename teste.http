@@ -1,0 +1,56 @@
+####
+GET http://localhost:1234/visualizar/livro'
+###
+GET http://localhost:1234/visualizar/usuario'
+###
+GET http://localhost:1234/visualizar/cart'
+
+###
+POST http://localhost:1234/cadastrar/livro
+Content-Type: application/json
+
+{     
+    "titulo": "Harry Potter e a Pedra Filosofal",
+    "autor":"J. K. Rowling",
+    "editora": "Bloomsbury Publishing",
+    "edicao" : "ediçao I",
+    "anoPublicacao": "1997-06-26",
+    "preco": 29.90,
+    "quantidade":400,
+    "categoria": [ { "categoria" : "Romance"},{ "categoria" : "Literatura infantil"},{ "categoria" : "fantástica"}]
+}
+
+###
+POST http://localhost:1234/cadastrar/usuario
+Content-Type: application/json
+
+{     
+    "name":"usuario",
+    "cpf": "888",
+    "email": "usuario@gmail.com",
+    "dataNascimento": "2000-12-15"
+}
+
+###
+POST http://localhost:1234/cadastrar/usuario
+Content-Type: application/json
+
+{     
+     "quantidade":10 ,
+     "precoTotal": 20 ,
+     "userId" : {
+        "_id": "5f6a143d00669b251ca01647"
+     },
+     "booktId" :[{
+         "_id" :"5f78c5e5ced9be0424897caa"
+     }]
+      
+}
+
+###
+GET http://localhost:1234/buscar/usuario/5f6a143d00669b251ca01647
+
+###
+DELETE http://localhost:1234/delete/usuario/5f6a143d00669b251ca01647
+
+

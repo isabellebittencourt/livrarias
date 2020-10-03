@@ -1,18 +1,26 @@
-const mongoose = requere('mongoose');
-const userSchema = require('./userSchema');
-const bookSchema = require('./bookSchema');
+const mongoose = require('mongoose');
 
 var shoppingCart = new mongoose.Schema({
     quantidade:{
         type: Number,
-        required:[true,'Obrigatório']
+        required:[true,'quantidade Obrigatório']
     },
     precoTotal:{
         type: Number,
-        required:[true, 'Obrigatório']
+        required:[true, '  precoTotalObrigatório']
     },
-    usuario:[userSchema],
-    livro:[bookSchema]
+    userId:
+    {
+    type: mongoose.Schema.Types.ObjectId, 
+    ref: 'userSchema',
+    required: true
+},
+    booktId:
+       [{
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'bookSchema',
+        required: true
+    }],
 });
 
 module.exports = mongoose.model('carrinho', shoppingCart);
