@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 var categorie = new mongoose.Schema({
     categoria: {
         type: String,
-        required: [true, "O campo é obrigatório"],
+        required: [true, "O campo é obrigatório."],
       }
 });
 
