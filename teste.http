@@ -1,9 +1,9 @@
 ####
-GET http://localhost:1234/visualizar/livro'
+GET http://localhost:1234/visualizar/livro
 ###
-GET http://localhost:1234/visualizar/usuario'
+GET http://localhost:1234/visualizar/usuario
 ###
-GET http://localhost:1234/visualizar/cart'
+GET http://localhost:1234/visualizar/cart
 
 ###
 POST http://localhost:1234/cadastrar/livro
