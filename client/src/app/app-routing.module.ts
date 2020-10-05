@@ -1,3 +1,5 @@
+import { CreateUsersComponent } from './views/user/create-users/create-users.component';
+import { ListUsersComponent } from './views/user/list-users/list-users.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -13,6 +15,14 @@ const routes: Routes = [
     path: 'book/create',
     component: CreateBooksComponent
   },
+  {
+    path: 'user/list',
+    component: ListUsersComponent
+  },
+  {
+    path: 'user/create',
+    component: CreateUsersComponent
+  }
 
 ];
 

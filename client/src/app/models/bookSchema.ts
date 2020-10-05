@@ -8,14 +8,14 @@ export class bookSchema{
     autor: string;
        
     editora: string;
-       
+    
     edicao: string;
     
-    anoPublicacao: Date;
+    anoPublicacao?: Date;
         
     preco: number;
 
     quantidade: number;
     
-    categoria: [categorieSchema];
+    categoria: categorieSchema[];
 };

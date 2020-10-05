@@ -9,9 +9,12 @@ import { Observable } from 'rxjs'
 })
 export class BookService {
 
+  baseUrl = 'http://localhost:1234/visualizar/livro';
+
   constructor(private http: HttpClient) { }
 
   list(): Observable<bookSchema[]>{
-    return this.http.get<bookSchema[]>('http://localhost:1234');
+    return this.http.get<bookSchema[]>(this.baseUrl)
+
   }
 }
