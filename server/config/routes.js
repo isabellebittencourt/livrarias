@@ -21,5 +21,4 @@ router.get('/visualizar/cart',cartController.get);
 router.get('/buscar/cart/:idcart',cartController.getById);
 router.delete('/delete/cart/:idCartDelete',cartController.deleteCart);
 
-
 module.exports = router;

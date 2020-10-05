@@ -3,11 +3,11 @@ const mongoose = require('mongoose');
 var shoppingCart = new mongoose.Schema({
     quantidade:{
         type: Number,
-        required:[true,'quantidade Obrigatório']
+        required:[true,'quantidade Obrigatório.']
     },
     precoTotal:{
         type: Number,
-        required:[true, '  precoTotalObrigatório']
+        required:[true, '  precoTotalObrigatório.']
     },
     userId:
     {

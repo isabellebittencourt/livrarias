@@ -8,27 +8,27 @@ var book = new mongoose.Schema ({
     },
     autor: {
         type: String,
-        required: [true, "Obrigatório"]
+        required: [true, "Obrigatório."]
     },
     editora: {
         type: String,
-        required: [true, "Obrigatório"]
+        required: [true, "Obrigatório."]
     },
     edicao: {
         type: String,
-        required: [true, "Obrigatório"]
+        required: [true, "Obrigatório."]
     },
     anoPublicacao:{
         type: Date,
-        requiered: [true, "Obrigatório"],
+        requiered: [true, "Obrigatório."],
     },
     preco:{
         type: Number,
-        required: [true, "Obrigatório"]
+        required: [true, "Obrigatório."]
     },
     quantidade:{
         type:Number,
-        required: [true, "Obrigatório"]
+        required: [true, "Obrigatório."]
     },
     categoria: [categorieSchema]
 })

@@ -3,13 +3,13 @@ const user = require('../models/userSchema');
 class userController{
     //Cadastra um usuario
     async cadastrar(req,res){
-        var result = await user.create(req.body );
+        var result = await user.create(req.body);
         res.status(201).json(result);
         }
 
         //Busca o usuario:
         async get(req, res){
-            res.status(404).json(  await user.find({}));
+            res.status(404).json(await user.find({}));
         }
 
         //buscar por Id
@@ -19,7 +19,7 @@ class userController{
         }
         //deletar um usuario por id
         async deleteUser(req, res){
-            var result = await user.findByIdAndRemove( req.params.idUserDelete);
+            var result = await user.findByIdAndRemove(req.params.idUserDelete);
             res.status(200).json(result);
         }
         //atualizar um usuario por id

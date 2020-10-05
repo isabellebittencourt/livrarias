@@ -1,0 +1,25 @@
+<table >
+    <tr>
+        <th>Id</th>
+        <th>Título</th>
+        <th>Autor</th>
+        <th>Editora</th>
+        <th>Edição</th>
+        <th>Ano de Publicação</th>
+        <th>Preço</th>
+        <th>Quantidade</th>
+        <th>Categoria</th>
+    </tr>
+    <tr *ngFor="let book of books">
+       <td>{{book._id}}</td>
+       <td>{{book.titulo}}</td>
+       <td>{{book.autor}}</td>
+       <td>{{book.editora}}</td>
+       <td>{{book.anoPublicacao}}</td>
+       <td>{{book.preco}}</td>
+       <td>{{book.quantidade}}</td>
+       <td>#####</td>
+       <td><a routerLink="book/create/{{book._id}}">Alterar</a></td>
+    </tr>
+</table>
+
