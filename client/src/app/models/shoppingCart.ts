@@ -1,15 +1,15 @@
-import { bookSchema } from './bookSchema';
-import { userSchema } from './userSchema';
+import { book } from './book';
+import { user} from './user';
 
 export class shoppingCart{
+    _id?: string;
+    quantidade:number;
 
-quantidade:number;
-
-precoTotal:number;
+    precoTotal:number;
         
-userId: userSchema;
+    userId: user;
     
-booktId: bookSchema;
+    booktId: book[];
       
 }
 

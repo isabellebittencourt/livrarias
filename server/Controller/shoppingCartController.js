@@ -9,7 +9,7 @@ class shoppingCartController{
 
         //Busca ocarrinho:
         async get(req, res){
-            res.status(404).json(await cart.find({}));
+            res.status(200).json(await cart.find({}));
         }
 
         //buscar por Id

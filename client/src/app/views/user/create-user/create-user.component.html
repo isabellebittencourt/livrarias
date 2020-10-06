@@ -1,0 +1,10 @@
+<label>Nome</label><br/>
+<input type="text" placeholder="Nome" name="nome" [(ngModel)] = "user.name"/><br/>
+<label>Email</label><br/>
+<input type="Email" placeholder="Email" name="email" [(ngModel)] = "user.email"/><br/>
+<label>Cpf</label><br/>
+<input type="text" placeholder="Cpf" name="cpf" [(ngModel)] = "user.cpf"/><br/>
+<label>Data nascimento</label><br/>
+<input type="date" placeholder="Nome" name="data " [(ngModel)] = "user.dataNascimento"/><br/>
+
+<button (click) = "createUser()">cadastrar</button>

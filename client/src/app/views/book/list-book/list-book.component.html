@@ -1,0 +1,30 @@
+<button (click)="navigationToCreateBook( )">
+    Cadastrar Livro
+</button>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Título</th>
+        <th>Autor</th>
+        <th>Editora</th>
+        <th>Edição</th>
+        <th>Ano de Publicação</th>
+        <th>Preço</th>
+        <th>Quantidade</th>
+        <th>Categoria</th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let livro of livros">
+       <td>{{livro._id}}</td>
+       <td>{{livro.titulo}}</td>
+       <td>{{livro.autor}}</td>
+       <td>{{livro.editora}}</td>
+       <td>{{livro.edicao}}</td>
+       <td>{{livro.anoPublicacao  | date: "dd/MM/yyyy hh:mm"}}</td>
+       <td>{{livro.preco}}</td>
+       <td>{{livro.quantidade}}</td>
+       <td>#####</td>
+       <td><a routerLink="book/create/{{livro._id}}">Alterar</a></td>
+    </tr>
+</table>

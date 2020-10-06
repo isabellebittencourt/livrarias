@@ -14,7 +14,7 @@ var user = new mongoose.Schema({
         require: [true, "Obrigatório"]
     },
     dataNascimento:{
-        type: String,
+        type: Date,
         require: [true, "Obrigatório"]
     }
 });

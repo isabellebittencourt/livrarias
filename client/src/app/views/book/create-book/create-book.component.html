@@ -1,0 +1,20 @@
+
+<label>titulo</label><br/>
+<input type="text" placeholder="titulo" name="titulo" [(ngModel)] = "book.titulo"/><br/>
+<label>autor</label><br/>
+<input type="text" placeholder="autor" name="autor" [(ngModel)] = "book.autor"/><br/>
+<label>editora</label><br/>
+<input type="text" placeholder="editora" name="editora" [(ngModel)] = "book.editora"/><br/>
+<label>edicao</label><br/>
+<input type="text" placeholder="edicao" name="edicao" [(ngModel)] = "book.edicao"/><br/>
+<label>anoPublicacao</label><br/>
+<input type="date" placeholder="anoPublicacao" name="anoPublicacao" [(ngModel)] = "book.anoPublicacao"/><br/>
+<label>preco</label><br/>
+<input type="number" placeholder="preco" name="preco" [(ngModel)] = "book.preco"/><br/>
+<label>quantidade</label><br/>
+<input type="number" placeholder="quantidade" name="quantidade" [(ngModel)] = "book.quantidade"/><br/>
+
+<button (click) ="createBook()">
+    Cadastrar
+</button>
+

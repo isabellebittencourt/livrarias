@@ -9,7 +9,7 @@ class bookController{
 
     //Busca o livro:
     async get(req, res){
-        res.status(404).json(await book.find({}));
+        res.status(200).json(await book.find({}));
     }
 
     //buscar por Id

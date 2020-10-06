@@ -9,7 +9,7 @@ class userController{
 
         //Busca o usuario:
         async get(req, res){
-            res.status(404).json(await user.find({}));
+            res.status(200).json(await user.find({}));
         }
 
         //buscar por Id

@@ -1,24 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { AppComponent } from './app.component';
+import { ListBookComponent } from './views/book/list-book/list-book.component';
+import { CreateBookComponent } from './views/book/create-book/create-book.component';
+import { ListUserComponent } from './views/user/list-user/list-user.component';
+import { CreateUserComponent } from './views/user/create-user/create-user.component';
 import { FormsModule } from '@angular/forms';
 
-
-import { AppComponent } from './app.component';
-import { ListBooksComponent } from './views/book/list-books/list-books.component';
-import { CreateBooksComponent } from './views/book/create-books/create-books.component';
-import { ListUsersComponent } from './views/user/list-users/list-users.component';
-import { CreateUsersComponent } from './views/user/create-users/create-users.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListBooksComponent,
-    CreateBooksComponent,
-    ListUsersComponent,
-    CreateUsersComponent
+    ListBookComponent,
+    CreateBookComponent,
+    ListUserComponent,
+    CreateUserComponent
   ],
   imports: [
     BrowserModule,

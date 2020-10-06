@@ -1,20 +1,21 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { bookSchema } from './../models/bookSchema';
-import { Observable } from 'rxjs'
-
+import { book } from '../models/book';
+import{HttpClient} from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BookService {
-
-  baseUrl = 'http://localhost:1234/visualizar/livro';
-
+  baseUrl ='http://localhost:1234/visualizar/livro';
+  baseUrlCadastro = 'http://localhost:1234/cadastrar/livro';
   constructor(private http: HttpClient) { }
 
-  list(): Observable<bookSchema[]>{
-    return this.http.get<bookSchema[]>(this.baseUrl)
+  listBook(): Observable<book[]>{
+      return this.http.get<book[]>(this.baseUrl);
+  }
 
+  createBook(book : book):Observable<book>{
+    return this.http.post<book>(this.baseUrlCadastro , book);
   }
 }

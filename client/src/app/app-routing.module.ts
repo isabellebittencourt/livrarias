@@ -1,29 +1,35 @@
-import { CreateUsersComponent } from './views/user/create-users/create-users.component';
-import { ListUsersComponent } from './views/user/list-users/list-users.component';
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { CreateBookComponent } from './views/book/create-book/create-book.component';
+import { ListBookComponent } from './views/book/list-book/list-book.component';
+import { CreateUserComponent } from './views/user/create-user/create-user.component';
+import { ListUserComponent } from './views/user/list-user/list-user.component';
 
-import { CreateBooksComponent} from './views/book/create-books/create-books.component';
-import { ListBooksComponent } from './views/book/list-books/list-books.component';
+const routes: Routes = [{
+  path:'',
+  component:ListBookComponent
+},
 
-const routes: Routes = [
-  {
-    path: '', 
-    component: ListBooksComponent
-  },
-  {
-    path: 'book/create',
-    component: CreateBooksComponent
-  },
-  {
-    path: 'user/list',
-    component: ListUsersComponent
-  },
-  {
-    path: 'user/create',
-    component: CreateUsersComponent
-  }
-
+{
+  path:'book/create',
+  component:CreateBookComponent
+},
+{
+  path:'book/create/:id',
+  component:CreateBookComponent
+},
+{
+  path: 'user/list',
+  component: ListUserComponent
+},
+{
+  path: 'user/create',
+  component: CreateUserComponent
+},
+{
+  path: 'user/create/:id',
+  component: CreateUserComponent
+},
 ];
 
 @NgModule({
