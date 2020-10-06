@@ -36,6 +36,13 @@ class bookController {
     async getById(request, response) { 
         const { id } = request.params;
 
+        if(!id) {
+            return response.status(400).json({
+                success: false,
+                message: 'O ID não foi especificado!'
+            });
+        }
+
         const result = await book.findById(id);
 
         return response.status(200).json(result);
@@ -43,6 +50,13 @@ class bookController {
 
     async delete(request, response) {
         const { id } = request.params;
+
+        if(!id) {
+            return response.status(400).json({
+                success: false,
+                message: 'O ID não foi especificado!'
+            });
+        }
 
         const result = await book.findByIdAndRemove(id, {
             useFindAndModify: false
@@ -64,6 +78,13 @@ class bookController {
         } = request.body;
 
         const { id } = request.params;
+
+        if(!id) {
+            return response.status(400).json({
+                success: false,
+                message: 'O ID não foi especificado!'
+            });
+        }
 
         const result = await book.findByIdAndUpdate(id, {
             titulo,

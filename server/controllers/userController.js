@@ -28,6 +28,13 @@ class userController {
     async getById(request, response) {
         const { id } = request.params;
 
+        if(!id) {
+            return response.status(400).json({
+                success: false,
+                message: 'O ID não foi especificado!'
+            });
+        }
+
         const result = await user.findById(id);
 
         return response.status(200).json(result);
@@ -35,6 +42,13 @@ class userController {
 
     async delete(request, response) {
         const { id } = request.params;
+
+        if(!id) {
+            return response.status(400).json({
+                success: false,
+                message: 'O ID não foi especificado!'
+            });
+        }
 
         const result = await user.findByIdAndRemove(id, {
             useFindAndModify: false
@@ -52,6 +66,13 @@ class userController {
         } = request.body;
 
         const { id } = request.params;
+
+        if(!id) {
+            return response.status(400).json({
+                success: false,
+                message: 'O ID não foi especificado!'
+            });
+        }
 
         const result = await user.findByIdAndUpdate(id, {
             nome,

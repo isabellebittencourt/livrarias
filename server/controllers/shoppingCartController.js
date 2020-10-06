@@ -28,6 +28,13 @@ class shoppingCartController {
     async getById(request, response) {
         const { id } = request.params;
 
+        if(!id) {
+            return response.status(400).json({
+                success: false,
+                message: 'O ID não foi especificado!'
+            });
+        }
+
         const result = await cart.findById(id);
 
         return response.status(200).json(result);
@@ -35,6 +42,13 @@ class shoppingCartController {
     
     async delete(request, response) {
         const { id } = request.params;
+
+        if(!id) {
+            return response.status(400).json({
+                success: false,
+                message: 'O ID não foi especificado!'
+            });
+        }
 
         const result = await cart.findByIdAndRemove(id, {
             useFindAndModify: false
