@@ -14,13 +14,25 @@ class userController {
             cpf,
             email,
             dataNascimento
+        })
+        .catch(() => {
+            return response.status(400).json({
+                success: false,
+                message: 'Erro ao efetuar a operação'
+            });
         });
 
         return response.status(201).json(result);
     }
 
     async getAll(request, response) {
-        const result = await user.find({});
+        const result = await user.find({})
+        .catch(() => {
+            return response.status(400).json({
+                success: false,
+                message: 'Erro ao efetuar a operação'
+            });
+        });
 
         return response.status(200).json(result);
     }
@@ -35,7 +47,13 @@ class userController {
             });
         }
 
-        const result = await user.findById(id);
+        const result = await user.findById(id)
+        .catch(() => {
+            return response.status(400).json({
+                success: false,
+                message: 'Erro ao efetuar a operação'
+            });
+        });
 
         return response.status(200).json(result);
     }
@@ -52,6 +70,12 @@ class userController {
 
         const result = await user.findByIdAndRemove(id, {
             useFindAndModify: false
+        })
+        .catch(() => {
+            return response.status(400).json({
+                success: false,
+                message: 'Erro ao efetuar a operação'
+            });
         });
 
         return response.status(200).json(result);
@@ -79,6 +103,12 @@ class userController {
             cpf,
             email,
             dataNascimento
+        })
+        .catch(() => {
+            return response.status(400).json({
+                success: false,
+                message: 'Erro ao efetuar a operação'
+            });
         });
 
         return response.status(200).json(result);

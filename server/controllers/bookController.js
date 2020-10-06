@@ -22,13 +22,25 @@ class bookController {
             preco,
             quantidade,
             categoria
+        })
+        .catch(() => {
+            return response.status(400).json({
+                success: false,
+                message: 'Erro ao efetuar a operação'
+            });
         });
 
         return response.status(201).json(result);
     }
 
     async getAll(request, response) {
-        const result = await book.find({});
+        const result = await book.find({})
+        .catch(() => {
+            return response.status(400).json({
+                success: false,
+                message: 'Erro ao efetuar a operação'
+            });
+        });
 
         return response.status(200).json(result);
     }
@@ -43,7 +55,13 @@ class bookController {
             });
         }
 
-        const result = await book.findById(id);
+        const result = await book.findById(id)
+        .catch(() => {
+            return response.status(400).json({
+                success: false,
+                message: 'Erro ao efetuar a operação'
+            });
+        });
 
         return response.status(200).json(result);
     }
@@ -60,6 +78,12 @@ class bookController {
 
         const result = await book.findByIdAndRemove(id, {
             useFindAndModify: false
+        })
+        .catch(() => {
+            return response.status(400).json({
+                success: false,
+                message: 'Erro ao efetuar a operação'
+            });
         });
 
         return response.status(200).json(result);
@@ -95,6 +119,12 @@ class bookController {
             preco,
             quantidade,
             categoria
+        })
+        .catch(() => {
+            return response.status(400).json({
+                success: false,
+                message: 'Erro ao efetuar a operação'
+            });
         });
 
         return response.status(200).json(result);
