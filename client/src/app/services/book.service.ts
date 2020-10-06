@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class BookService {
-  baseUrl ='http://localhost:1234/visualizar/livro';
-  baseUrlCadastro = 'http://localhost:1234/cadastrar/livro';
+  baseUrl ='http://localhost:1234/livro/listar';
+  baseUrlCadastro = 'http://localhost:1234/livro/cadastrar';
   constructor(private http: HttpClient) { }
 
   listBook(): Observable<book[]>{
