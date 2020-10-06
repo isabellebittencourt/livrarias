@@ -1,19 +1,22 @@
 const mongoose = require('mongoose');
 
 var user = new mongoose.Schema({
-    name: {
+    nome: {
         type: String,
         require: [true, "Obrigatório"]
     },
-    cpf:{
+
+    cpf: {
         type: String,
         require: [true, "Obrigatório"]
     },
-    email:{
+
+    email: {
         type: String,
         require: [true, "Obrigatório"]
     },
-    dataNascimento:{
+
+    dataNascimento: {
         type: Date,
         require: [true, "Obrigatório"]
     }

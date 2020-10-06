@@ -1,36 +1,44 @@
 const mongoose = require('mongoose');
-const categorieSchema = require ('../models/categorieSchema');
 
-var book = new mongoose.Schema ({
+const categorySchema = require ('./categorySchema');
+
+const book = new mongoose.Schema({
     titulo: {
         type: String,
         required: [true, "Obrigatório ter título"]
     },
+
     autor: {
         type: String,
         required: [true, "Obrigatório."]
     },
+
     editora: {
         type: String,
         required: [true, "Obrigatório."]
     },
+
     edicao: {
         type: String,
         required: [true, "Obrigatório."]
     },
-    anoPublicacao:{
+
+    anoPublicacao: {
         type: Date,
         requiered: [true, "Obrigatório."],
     },
-    preco:{
+
+    preco: {
         type: Number,
         required: [true, "Obrigatório."]
     },
-    quantidade:{
+
+    quantidade: {
         type:Number,
         required: [true, "Obrigatório."]
     },
-    categoria: [categorieSchema]
+
+    categoria: [categorySchema]
 })
 
 module.exports = mongoose.model('livro', book);
