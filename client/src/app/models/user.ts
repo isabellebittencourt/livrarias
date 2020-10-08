@@ -1,9 +1,7 @@
 export class user{
     _id?:string;
-    name: string;
+    nome: string;
     cpf:string;
     email:string;
     dataNascimento:Date
-    
-    
 }

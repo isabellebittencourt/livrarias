@@ -1,7 +1,5 @@
 <div class="inner-component">
-    <h3>Cadastrar livro</h3>
-
-    <form (submit)="createBook()">
+    <form (submit)="updateBook()">
         <div class="form-group">
           <label for="titulo">Título</label>
           <input type="text" class="form-control" name="titulo" id="titulo" [(ngModel)] = "book.titulo" required>
@@ -37,7 +35,7 @@
             <input type="number" class="form-control" name="quantidade" id="quantidade" [(ngModel)] = "book.quantidade" required>
         </div>
 
-        <button type="submit" class="btn btn-primary">Editar</button>
+        <button type="submit" class="btn btn-primary">Alterar</button>
     </form>
 </div>
 

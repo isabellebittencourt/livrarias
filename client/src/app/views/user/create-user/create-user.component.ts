@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { user } from 'src/app/models/user';
+import { Router } from "@angular/router";
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -10,19 +11,19 @@ import { UserService } from 'src/app/services/user.service';
 export class CreateUserComponent implements OnInit {
 
 user:user={
-    name:"",
+    nome:"",
     cpf : "",
     email: "",
     dataNascimento: new Date()
 }
 
-  constructor(private service : UserService) { }
+  constructor(private service : UserService, private router: Router) { }
 
   ngOnInit(): void {
   }
   createUser() : void{
    this.service.createUser(this.user).subscribe(() =>{
-      console.log(user);
+    this.router.navigate(['user/list']);
    })
   }
 

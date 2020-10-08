@@ -9,19 +9,29 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./list-user.component.css']
 })
 export class ListUserComponent implements OnInit {
-  usuario : user[] = []; 
+  usuarios : user[] = []; 
   constructor(private router:Router,private userService : UserService) { }
 
   ngOnInit(): void {
-    this.userService.listUsers( ).subscribe((usuarios ) => {
-      console.log(usuarios);
-     this.usuario = usuarios;
+    this.userService.listUsers().subscribe((users) => {
+     this.usuarios = users;
   });
   }
 
   navigateToCreateUser(): void {
     this.router.navigate(['user/create']);
-    
+  }
+
+  deleteUser(userId : String) {
+    const confirmation = confirm('Deseja mesmo deletar este usuário?');
+
+    if(!confirmation) {
+      return;
+    }
+
+    this.userService.deleteUser(userId).subscribe();
+
+    window.location.reload();
   }
 
 }

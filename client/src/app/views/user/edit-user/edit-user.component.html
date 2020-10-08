@@ -1,7 +1,5 @@
 <div class="inner-component">
-    <h3>Cadastrar usuário</h3>
-
-    <form (submit)="createUser()">
+    <form (submit)="editUser()">
         <div class="form-group">
           <label for="nome">Nome</label>
           <input type="text" class="form-control" name="nome" id="nome" [(ngModel)] = "user.nome" required>
@@ -22,7 +20,7 @@
             <input type="date" class="form-control" name="dataNascimento" id="dataNascimento" [(ngModel)] = "user.dataNascimento" required>
         </div>
 
-        <button type="submit" class="btn btn-primary">Adicionar</button>
+        <button type="submit" class="btn btn-primary">Alterar</button>
     </form>
 </div>
 

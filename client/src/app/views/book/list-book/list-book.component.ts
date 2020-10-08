@@ -14,13 +14,28 @@ export class ListBookComponent implements OnInit {
   constructor(private router:Router,private bookService : BookService) { }
 
   ngOnInit(): void {
-    this.bookService.listBook().subscribe((lista) =>{
-        console.log(lista)
-        this.livros = lista;  
+    this.bookService.listBook().subscribe(books =>{
+        this.livros = books;  
     })
   }
   navigationToCreateBook() : void{
     this.router.navigate(['book/create'])
+  }
+
+  navigationToCreateUser() : void{
+    this.router.navigate(['user/create'])
+  }
+
+  deleteBook(bookId : String) {
+    const confirmation = confirm('Deseja mesmo deletar este livro?');
+
+    if(!confirmation) {
+      return;
+    }
+
+    this.bookService.deleteBook(bookId).subscribe();
+
+    window.location.reload();
   }
 
 }

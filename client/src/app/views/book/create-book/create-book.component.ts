@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { book } from 'src/app/models/book';
+import { Router } from "@angular/router";
 import { BookService } from 'src/app/services/book.service';
 
 @Component({
@@ -9,23 +10,23 @@ import { BookService } from 'src/app/services/book.service';
 })
 export class CreateBookComponent implements OnInit {
   book: book = {
-    titulo : "teste",
-    autor : "teste",
-    editora :"teste",
-    edicao: "teste",
+    titulo : "",
+    autor : "",
+    editora :"",
+    edicao: "",
     anoPublicacao : new Date(),
-    preco : 10,
-    quantidade : 20,
-    categoria : [{categoria : "teste"}]
+    preco : 0,
+    quantidade : 0,
+    categoria : []
   }
-  constructor(private service: BookService) { }
+  constructor(private service: BookService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   createBook() : void{
       this.service.createBook(this.book).subscribe((livro) =>{
-            console.log(livro);
+        this.router.navigate(['/']);
       })
   }
 

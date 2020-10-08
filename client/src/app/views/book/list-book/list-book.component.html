@@ -1,30 +1,38 @@
-<button (click)="navigationToCreateBook( )">
-    Cadastrar Livro
-</button>
+<div class="inner-component">
+    <h1>Livros</h1>
 
-<table>
-    <tr>
-        <th>Id</th>
-        <th>Título</th>
-        <th>Autor</th>
-        <th>Editora</th>
-        <th>Edição</th>
-        <th>Ano de Publicação</th>
-        <th>Preço</th>
-        <th>Quantidade</th>
-        <th>Categoria</th>
-        <th></th>
-    </tr>
-    <tr *ngFor="let livro of livros">
-       <td>{{livro._id}}</td>
-       <td>{{livro.titulo}}</td>
-       <td>{{livro.autor}}</td>
-       <td>{{livro.editora}}</td>
-       <td>{{livro.edicao}}</td>
-       <td>{{livro.anoPublicacao  | date: "dd/MM/yyyy hh:mm"}}</td>
-       <td>{{livro.preco}}</td>
-       <td>{{livro.quantidade}}</td>
-       <td>#####</td>
-       <td><a routerLink="book/create/{{livro._id}}">Alterar</a></td>
-    </tr>
-</table>
+    <button class="btn btn-primary float-right mb-3" (click)="navigationToCreateBook()">
+        Cadastrar Livro
+    </button>
+
+    <table class="table table-striped">
+        <tr class="bg-primary text-light">
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Editora</th>
+            <th>Edição</th>
+            <th>Ano de Publicação</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Categoria</th>
+            <th></th>
+        </tr>
+        <tr *ngFor="let livro of livros">
+            <td>{{livro.titulo}}</td>
+            <td>{{livro.autor}}</td>
+            <td>{{livro.editora}}</td>
+            <td>{{livro.edicao}}</td>
+            <td>{{livro.anoPublicacao  | date: "yyyy"}}</td>
+            <td>{{livro.preco}}</td>
+            <td>{{livro.quantidade}}</td>
+            <td>
+                <p *ngFor="let c of livro.categoria;">{{ c.categoria }}</p>
+                </td>
+            <td>
+                <a routerLink="/book/edit/{{livro._id}}">✏</a>
+                <a (click)="deleteBook(livro._id)" class="clickable">❌</a>
+            </td>
+        </tr>
+    </table>
+</div>
+

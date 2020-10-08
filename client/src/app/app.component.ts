@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styles: []
 })
 export class AppComponent {
-  title = 'client';
+  constructor(private router:Router) { }
+
+  navigationToUsers() : void{
+    this.router.navigate(['user/list'])
+  }
+
+  navigationToHome() : void{
+    this.router.navigate(['/'])
+  }
 }

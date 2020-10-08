@@ -7,14 +7,30 @@ import { user } from '../models/user';
   providedIn: 'root'
 })
 export class UserService {
-  baseUrl = 'http://localhost:1234/visualizar/usuario';
-  baseUrlCadastro = 'http://localhost:1234/cadastrar/usuario';
+  baseUrl = 'http://localhost:1234/usuario';
+
   constructor(private http: HttpClient) { }
 
-  listUsers(): Observable<user[]>{
-    return this.http.get<user[]>(this.baseUrl );
-}
-createUser(user : user):Observable<user>{
-  return this.http.post<user>(this.baseUrlCadastro , user);
-}
+  listUsers(): Observable<user[]> {
+    return this.http.get<user[]>(`${this.baseUrl}/listar`);
+  }
+
+  createUser(user : user):Observable<user> {
+    return this.http.post<user>(`${this.baseUrl}/cadastrar`, user);
+  }
+
+  updateUser(user : user):Observable<user> {
+    return this.http.put<user>(`${this.baseUrl}/atualizar/${user._id}`, user);
+  }
+
+  deleteUser(userId : String):Observable<user> {
+    return this.http.delete<user>(`${this.baseUrl}/deletar/${userId}`);
+  }
+
+  getUser(userId : String):Observable<user> {
+    return this.http.get<user>(`${this.baseUrl}/buscar/${userId}`);
+  }
+
+
+
 }
