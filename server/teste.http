@@ -6,7 +6,7 @@ GET http://localhost:1234/visualizar/usuario
 GET http://localhost:1234/visualizar/cart
 
 ###
-POST http://localhost:1234/cadastrar/livro
+POST http://localhost:1234/livro/cadastrar
 
 Content-Type: application/json
 
@@ -34,7 +34,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:1234/cadastrar/usuario
+POST http://localhost:1234/usuario/cadastrar
 
 Content-Type: application/json
 
