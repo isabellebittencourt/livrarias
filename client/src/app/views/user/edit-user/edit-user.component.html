@@ -1,23 +1,23 @@
-<div class="inner-component">
+<div class="container">
+    <h3>Alterar</h3>
     <form (submit)="editUser()">
-        
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" class="inputs">
             <mat-label>Nome</mat-label>
             <input matInput type="text" name="nome" id="nome" [(ngModel)] = "user.nome" required>
         </mat-form-field><br>
 
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" class="inputs">
             <mat-label>CPF</mat-label>
             <input matInput type="text" name="cpf" id="cpf" [(ngModel)] = "user.cpf" required>
         </mat-form-field><br>
     
 
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" class="inputs">
             <mat-label>Email</mat-label>
             <input matInput type="text" name="email" id="email" [(ngModel)] = "user.email" required>
         </mat-form-field><br>
 
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" class="inputs">
             <mat-label>Data de Nascimento</mat-label>
             <input matInput type="date" name="dataNascimento" id="dataNascimento" [(ngModel)] = "user.dataNascimento" required>
         </mat-form-field><br>

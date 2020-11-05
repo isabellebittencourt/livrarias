@@ -1,37 +1,38 @@
-<div class="inner-component">
+<div class="container">
+
+    <h3>Alterar</h3>
     <form (submit)="updateBook()">
-        
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" class="inputs">
             <mat-label>Título</mat-label>
             <input matInput type="text" name="titulo" id="titulo" [(ngModel)] = "book.titulo" required>
         </mat-form-field><br>
   
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" class="inputs">
             <mat-label>Editora</mat-label>
             <input matInput type="text" name="editora" id="editora" [(ngModel)] = "book.editora" required>
         </mat-form-field><br>
 
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" class="inputs">
             <mat-label>Autor</mat-label>
             <input matInput type="text" name="autor" id="autor" [(ngModel)] = "book.autor" required>
         </mat-form-field><br>
 
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" class="inputs">
             <mat-label>Edição</mat-label>
             <input matInput type="text" name="edicao" id="edicao" [(ngModel)] = "book.edicao" required>
         </mat-form-field><br>
 
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" class="inputs">
             <mat-label>Ano de Publicação</mat-label>
             <input matInput type="date" name="anoPublicacao" id="anoPublicacao" [(ngModel)] = "book.anoPublicacao" required>
         </mat-form-field><br>
 
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" class="inputs">
             <mat-label>Preço</mat-label>
             <input matInput type="number" name="preco" id="preco" [(ngModel)] = "book.preco" required>
         </mat-form-field><br>
 
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" class="inputs">
             <mat-label>Quantidade</mat-label>
             <input matInput type="text" name="quantidade" id="quantidade" [(ngModel)] = "book.quantidade" required>
         </mat-form-field><br>
