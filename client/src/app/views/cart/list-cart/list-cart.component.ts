@@ -26,6 +26,7 @@ export class ListCartComponent implements OnInit {
   items(): book[] {
     return this.cartService.items;
   }
+  
   removeBook(book){
     let c = this.cartService
     return c.removeBook(book); 

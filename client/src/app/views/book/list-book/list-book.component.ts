@@ -1,7 +1,9 @@
+
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { book } from 'src/app/models/book';
 import { BookService } from 'src/app/services/book.service';
+import { ShoppingCartService } from './../../../services/shopping-cart.service';
 
 @Component({
   selector: 'app-list-book',
@@ -10,9 +12,10 @@ import { BookService } from 'src/app/services/book.service';
 })
 export class ListBookComponent implements OnInit {
   
+
   livros : book[] = [];
   livrosColumns: string[] = ['titulo', 'autor', 'editora', 'anoPublicacao', 'preco', 'quantidade', 'adicionar', 'editar', 'deletar'];
-  constructor(private router:Router,private bookService : BookService) { }
+  constructor(private router:Router,private bookService : BookService, private carrinhoService : ShoppingCartService) { }
 
   ngOnInit(): void {
     this.bookService.listBook().subscribe(books =>{
@@ -38,5 +41,11 @@ export class ListBookComponent implements OnInit {
 
     window.location.reload();
   }
+
+ 
+addBookToCart(book){
+
+  this.carrinhoService.addItem(book);
+}
 
 }

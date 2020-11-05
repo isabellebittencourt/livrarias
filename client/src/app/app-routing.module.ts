@@ -6,6 +6,7 @@ import { ListBookComponent } from './views/book/list-book/list-book.component';
 import { CreateUserComponent } from './views/user/create-user/create-user.component';
 import { ListUserComponent } from './views/user/list-user/list-user.component';
 import { EditUserComponent } from './views/user/edit-user/edit-user.component';
+import { ListCartComponent } from './views/cart/list-cart/list-cart.component';
 
 const routes: Routes = [{
     path:'',
@@ -32,6 +33,10 @@ const routes: Routes = [{
     path: 'user/edit/:id',
     component: EditUserComponent
   },
+  {
+    path: 'cart/list',
+    component: ListCartComponent
+  }
 ];
 
 @NgModule({
