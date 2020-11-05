@@ -11,7 +11,7 @@ import { BookService } from 'src/app/services/book.service';
 export class ListBookComponent implements OnInit {
   
   livros : book[] = [];
-  livrosColumns: string[] = ['titulo', 'autor', 'editora', 'anoPublicacao', 'preco', 'quantidade'];
+  livrosColumns: string[] = ['titulo', 'autor', 'editora', 'anoPublicacao', 'preco', 'quantidade', 'adicionar', 'editar', 'deletar'];
   constructor(private router:Router,private bookService : BookService) { }
 
   ngOnInit(): void {

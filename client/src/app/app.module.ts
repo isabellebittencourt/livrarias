@@ -26,6 +26,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +41,9 @@ import { MatInputModule } from '@angular/material/input';
     EditUserComponent,
     HeaderComponent,
     NavComponent,
-    FooterComponent
+    FooterComponent,
+
+
   ],
   imports: [
     BrowserModule,
@@ -52,7 +57,9 @@ import { MatInputModule } from '@angular/material/input';
     MatToolbarModule,
     MatTableModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,6 +10,8 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class ListUserComponent implements OnInit {
   usuarios : user[] = []; 
+  usuarioColumns: string[] = ['nome', 'email', 'cpf', 'dataNascimento', 'editar', 'deletar'];
+
   constructor(private router:Router,private userService : UserService) { }
 
   ngOnInit(): void {
