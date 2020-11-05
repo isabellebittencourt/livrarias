@@ -1,0 +1,46 @@
+<div class="container">
+    <h1 class="mt-4">Carrinho de Compras</h1>
+
+    <table mat-table [dataSource]="items()">
+        <ng-container matColumnDef="titulo">
+            <th mat-header-cell *matHeaderCellDef> Título </th>
+            <td mat-cell *matCellDef="let x"> {{x.titulo}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="autor">
+            <th mat-header-cell *matHeaderCellDef> Autor </th>
+            <td mat-cell *matCellDef="let x"> {{x.autor}} </td>
+          </ng-container>
+          <ng-container matColumnDef="preco">
+            <th mat-header-cell *matHeaderCellDef> Preço </th>
+            <td mat-cell *matCellDef="let x"> {{x.preco}} </td>
+          </ng-container>
+          <ng-container matColumnDef="quantidade">
+            <th mat-header-cell *matHeaderCellDef> Quantidade </th>
+            <td mat-cell *matCellDef="let x"> <input matInput  ></td>
+          </ng-container>
+
+          <ng-container matColumnDef="remover">
+            <th mat-header-cell *matHeaderCellDef>Remover</th>
+            <td mat-cell *matCellDef="let x">
+              <button mat-icon-button color="warn" (click)="removeBook(x)">
+                  <mat-icon class="mat-18">delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+        <tr mat-header-row *matHeaderRowDef="cartColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: cartColumns;"></tr>
+    </table><br>
+
+    <h2>Total da Compra: </h2>
+<!-- <mat-nav-list>
+    <mat-list-item  class="itens"  *ngFor="let x of items()">
+        {{x.titulo}}
+    </mat-list-item>
+    <mat-list-item  class="itens"  *ngFor="let x of items()">
+        {{x.edicao}}
+    </mat-list-item>
+    <mat-list-item  class="itens"  *ngFor="let x of items()">
+        {{x.anoPublicacao}}
+    </mat-list-item>
+  </mat-nav-list> -->

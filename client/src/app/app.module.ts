@@ -29,6 +29,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
+import { ListCartComponent } from './views/cart/list-cart/list-cart.component';
 
 
 
@@ -44,6 +45,7 @@ import {MatTableModule} from '@angular/material/table';
     HeaderComponent,
     NavComponent,
     FooterComponent,
+    ListCartComponent,
 
 
   ],
