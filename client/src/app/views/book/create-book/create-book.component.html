@@ -1,18 +1,19 @@
+
 <div class="container example-container">
-    <h3>Cadastrar livro</h3>    
-        <mat-form-field  appearance="fill"  class="inputs">
+    <b><h2> Cadastrar Livro</h2></b>
+        <mat-form-field appearance="fill" class="inputs">
             <mat-label>Título</mat-label>
             <input matInput name="titulo" id="titulo" [(ngModel)] = "book.titulo" required>
         </mat-form-field><br>
 
         <mat-form-field appearance="fill" class="inputs">
             <mat-label>Autor</mat-label>
-            <input matInput name="autor" id="autor" [(ngModel)] = "book.autor" required>
+            <input matInput name="autor" id="autor" [(ngModel)] = "book.autor"  required>
         </mat-form-field><br>
-
+      
         <mat-form-field appearance="fill" class="inputs">
             <mat-label>Editora</mat-label>
-            <input matInput name="editora" id="editora" [(ngModel)] = "book.editora" required>
+            <input matInput name="editora" id="editora" [(ngModel)] = "book.editora"  required>
         </mat-form-field><br>
         
         <mat-form-field appearance="fill" class="inputs">
@@ -22,7 +23,7 @@
 
         <mat-form-field appearance="fill" class="inputs">
             <mat-label>Ano de Publicação</mat-label>
-            <input matInput type="date" name="anoPublicacao" id="anoPublicacao" [(ngModel)] = "book.anoPublicacao" required>
+            <input matInput type="date" name="anoPublicacao" id="anoPublicacao" [(ngModel)] = "book.anoPublicacao"  required>
         </mat-form-field><br>
         
         <mat-form-field appearance="fill" class="inputs">
@@ -32,12 +33,36 @@
 
         <mat-form-field appearance="fill" class="inputs">
             <mat-label>Quantidade</mat-label>
-            <input matInput name="quantidade" id="quantidade" [(ngModel)] = "book.quantidade" required>
+            <input matInput name="quantidade" id="quantidade" [(ngModel)] = "book.quantidade"  required>
         </mat-form-field><br>
+  
+            <mat-form-field appearance="fill" class="inputs">
+                <mat-label>Categoria</mat-label>
+                <input matInput name="CategoriaName" [(ngModel)]="categoriaName" >
+            </mat-form-field>
 
-        <button class="float-left mb-3" (click) = "createBook()" mat-raised-button color="primary">
+            <button mat-raised-button (click)="addCategoria()"  style="margin-left: 8px" mat-raised-button color="primary">
+                <span class="material-icons" >
+                        add
+                </span>
+            </button><br/>
+
+            <table mat-table [(dataSource)]="categoriaTable" class="mat-elevation-z8">
+                <ng-container matColumnDef="categoria">
+                  <th mat-header-cell *matHeaderCellDef> Nome </th>
+                  <td mat-cell *matCellDef="let categoria"> {{categoria.categoria}} </td>
+                </ng-container>
+              
+                <tr mat-header-row *matHeaderRowDef="categoriaColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: categoriaColumns;"></tr>
+              </table>
+            
+ 
+
+        <button class="float-left mb-3" (click) = "createBook()" mat-raised-button color="primary"class="botaoAcao">
             Cadastrar
         </button>
+
 </div>
 
    <!--<div class="form-group">

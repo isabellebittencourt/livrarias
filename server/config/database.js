@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const mongoose = require ('mongoose');
 
-const db = mongoose.connect(process.env.MONGO_URI, { useNewUrlParser:true, useUnifiedTopology: true });
+const db = mongoose.connect('mongodb+srv://isabellebitten:andrade123@cluster0.te5ze.gcp.mongodb.net/livraria?retryWrites=true&w=majority', {useNewUrlParser:true, useUnifiedTopology: true,});
 
 mongoose.connection.on("connected", () => {
     console.log("Conexão com o banco realizada com sucesso!");

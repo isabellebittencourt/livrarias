@@ -5,5 +5,14 @@ div.inner-component {
 .clickable {
     cursor: pointer;
 }
+
+.botaoAcao{
+    width: 50%;
+}
+.mat-form-field-infix {
+    color: white;
+}
+
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -21,13 +21,15 @@ import { HeaderComponent } from './components/template/header/header.component';
 import { NavComponent } from './components/template/nav/nav.component';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatTableModule } from '@angular/material/table';
+
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import {MatTableModule} from '@angular/material/table';
+
 
 
 @NgModule({
@@ -59,7 +61,8 @@ import { MatListModule } from '@angular/material/list';
     MatFormFieldModule,
     MatInputModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
