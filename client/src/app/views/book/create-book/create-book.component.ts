@@ -35,7 +35,7 @@ export class CreateBookComponent implements OnInit {
 
   addCategoria(): void{
     this.categoria = new categoria();
-    this.categoria.categoria = this.categoriaName;
+    this.categoria.nome = this.categoriaName;
     this.categorias.push(this.categoria)
     console.log( this.categorias);
     this.categoriaTable._updateChangeSubscription();
