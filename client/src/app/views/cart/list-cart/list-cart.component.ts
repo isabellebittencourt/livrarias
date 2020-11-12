@@ -13,7 +13,7 @@ export class ListCartComponent implements OnInit {
   constructor(private cartService : ShoppingCartService) { }
 
 
-  cartColumns : string[] = ['titulo', 'autor','preco', 'quantidade', 'remover'];
+  cartColumns : string[] = ['titulo', 'autor','preco', 'remover'];
 
   ngOnInit(): void {
     let cartSession = sessionStorage.getItem("cart");
