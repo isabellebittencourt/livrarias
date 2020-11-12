@@ -1,25 +1,25 @@
 const mongoose = require('mongoose');
 
 const shoppingCart = new mongoose.Schema({
-    quantidade:{
+    quantidade: {
         type: Number,
         required:[true,'quantidade Obrigatório.']
     },
 
-    precoTotal:{
+    precoTotal: {
         type: Number,
         required:[true, '  precoTotalObrigatório.']
     },
 
-    userId: {
+    usuario: {
         type: mongoose.Schema.Types.ObjectId, 
-        ref: 'userSchema',
+        ref: 'usuario',
         required: true
     },
 
-    booktId: [{
+    livros: [{
         type: mongoose.Schema.Types.ObjectId, 
-        ref: 'bookSchema',
+        ref: 'livro',
         required: true
     }],
 });

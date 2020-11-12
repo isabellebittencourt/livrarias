@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 
-const categorySchema = require ('./categorySchema');
-
 const book = new mongoose.Schema({
     titulo: {
         type: String,
@@ -34,11 +32,14 @@ const book = new mongoose.Schema({
     },
 
     quantidade: {
-        type:Number,
+        type: Number,
         required: [true, "Obrigatório."]
     },
 
-    categoria: [categorySchema]
+    categoria: {
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'categoria' 
+    }
 })
 
 module.exports = mongoose.model('livro', book);

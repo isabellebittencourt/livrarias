@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
 const category = new mongoose.Schema({
-    categoria: {
-        type: String,
-        required: [true, "O campo é obrigatório."],
-      }
+    nome: {
+      type: String,
+      required: [true, "O campo é obrigatório."],
+    }
 });
 
-module.exports = category;
+module.exports = mongoose.model('categoria', category);

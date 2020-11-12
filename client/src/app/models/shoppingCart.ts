@@ -7,9 +7,9 @@ export class shoppingCart{
 
     precoTotal:number;
         
-    userId: user;
+    usuario: user;
     
-    booktId: book[];
+    livros: book[];
       
 }
 
