@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +12,8 @@ import { CreateBookComponent } from './views/book/create-book/create-book.compon
 import { ListUserComponent } from './views/user/list-user/list-user.component';
 import { CreateUserComponent } from './views/user/create-user/create-user.component';
 import { EditUserComponent } from './views/user/edit-user/edit-user.component';
+import { ListCartComponent } from './views/cart/list-cart/list-cart.component';
+import { PurchaseComponent } from './views/cart/purchase/purchase.component';
 
 import { FormsModule } from '@angular/forms';
 //import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -29,7 +32,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
-import { ListCartComponent } from './views/cart/list-cart/list-cart.component';
 
 
 
@@ -46,10 +48,11 @@ import { ListCartComponent } from './views/cart/list-cart/list-cart.component';
     NavComponent,
     FooterComponent,
     ListCartComponent,
-
+    PurchaseComponent
 
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -63,7 +66,7 @@ import { ListCartComponent } from './views/cart/list-cart/list-cart.component';
     MatFormFieldModule,
     MatInputModule,
     MatSidenavModule,
-    MatListModule,
+    MatListModule
     
   ],
   providers: [],
