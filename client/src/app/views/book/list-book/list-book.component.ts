@@ -14,12 +14,14 @@ export class ListBookComponent implements OnInit {
   
 
   livros : book[] = [];
-  livrosColumns: string[] = ['titulo', 'autor', 'editora', 'anoPublicacao', 'preco', 'quantidade', 'adicionar', 'editar', 'deletar'];
+  livrosColumns: string[] = ['titulo', 'autor', 'editora', 'categoria', 'anoPublicacao', 'preco', 'adicionar', 'editar', 'deletar'];
   constructor(private router:Router,private bookService : BookService, private carrinhoService : ShoppingCartService) { }
 
   ngOnInit(): void {
     this.bookService.listBook().subscribe(books =>{
         this.livros = books;  
+
+        console.log(books)
     })
   }
   navigationToCreateBook() : void{

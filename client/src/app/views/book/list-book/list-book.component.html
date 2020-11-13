@@ -20,6 +20,11 @@
             <th mat-header-cell *matHeaderCellDef> Editora </th>
             <td mat-cell *matCellDef="let livro"> {{livro.editora}} </td>
         </ng-container>
+
+        <ng-container matColumnDef="categoria">
+            <th mat-header-cell *matHeaderCellDef> Categoria </th>
+            <td mat-cell *matCellDef="let livro"> {{livro.categoria.nome}} </td>
+        </ng-container>
     
         <ng-container matColumnDef="anoPublicacao">
             <th mat-header-cell *matHeaderCellDef> Ano de Publicação </th>
@@ -28,12 +33,7 @@
 
         <ng-container matColumnDef="preco">
             <th mat-header-cell *matHeaderCellDef> Preço </th>
-            <td mat-cell *matCellDef="let livro"> {{livro.preco}} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="quantidade">
-            <th mat-header-cell *matHeaderCellDef> Quantidade </th>
-            <td mat-cell *matCellDef="let livro"> {{livro.quantidade}} </td>
+            <td mat-cell *matCellDef="let livro"> R$ {{livro.preco}} </td>
         </ng-container>
 
         <ng-container matColumnDef="adicionar">
