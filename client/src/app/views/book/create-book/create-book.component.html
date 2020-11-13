@@ -38,7 +38,7 @@
 
         <mat-form-field appearance="fill" class="inputs">
             <mat-label>Categoria</mat-label>
-            <mat-select [(ngModel)] = "book.categoria" required>
+            <mat-select [(ngModel)] = "book.categoria" required name="categoria" id="categoria">
               <mat-option *ngFor="let category of categories" [value]="category._id">
                 {{category.nome}}
               </mat-option>
