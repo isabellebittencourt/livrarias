@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 import { BookService } from 'src/app/services/book.service';
 import { categoria } from 'src/app/models/categoria';
 import { MatTableDataSource } from '@angular/material/table';
+import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
   selector: 'app-create-book',
@@ -11,36 +12,22 @@ import { MatTableDataSource } from '@angular/material/table';
   styleUrls: ['./create-book.component.css']
 })
 export class CreateBookComponent implements OnInit {
- 
-  categoriaColumns : string[] = ["categoria"]
-  categorias:categoria[] = [];
-  categoriaTable: MatTableDataSource<categoria> = 
-    new MatTableDataSource<categoria>(this.categorias);
- 
   book: book = new book();
-  categoriaName : string;
-  categoria:categoria = new categoria();
-  constructor(private service: BookService, private router: Router) { }
+
+  categories: categoria[] = [];
+
+  constructor(private service: BookService, private router: Router, private categoryService: CategoryService) { }
 
   ngOnInit(): void {
+    this.categoryService.list().subscribe(categories => {
+      this.categories = categories;
+    });
   }
 
-  createBook() : void{
-      this.book.categoria = this.categorias;
-      console.log(this.book);
-      this.service.createBook(this.book).subscribe((livro) =>{
+  createBook() : void {
+      this.service.createBook(this.book).subscribe(() =>{
         this.router.navigate(['/']);
       }) 
-  }
-
-  addCategoria(): void{
-    this.categoria = new categoria();
-    this.categoria.nome = this.categoriaName;
-    this.categorias.push(this.categoria)
-    console.log( this.categorias);
-    this.categoriaTable._updateChangeSubscription();
-    
-    this.categoriaName = "";
   }
 
 }
