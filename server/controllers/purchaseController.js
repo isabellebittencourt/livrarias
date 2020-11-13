@@ -4,12 +4,14 @@ class purchaseController {
     async add(request, response) {
         const {
             usuario,
-            itens
+            itens,
+            total
         } = request.body;
 
         const result = await purchase.create({
             usuario,
-            itens
+            itens,
+            total
         })
         .catch(() => {
             return response.status(400).json({
