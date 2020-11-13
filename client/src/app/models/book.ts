@@ -16,6 +16,6 @@ export class book{
 
     quantidade: number;
 
-    categoria: categoria[]
+    categoria: categoria;
 
 };
