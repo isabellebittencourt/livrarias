@@ -14,8 +14,9 @@ import { CreateUserComponent } from './views/user/create-user/create-user.compon
 import { EditUserComponent } from './views/user/edit-user/edit-user.component';
 import { ListCartComponent } from './views/cart/list-cart/list-cart.component';
 import { PurchaseComponent } from './views/cart/purchase/purchase.component';
+import { ListCategoryComponent } from './views/category/list-category/list-category.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -28,6 +29,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
@@ -48,7 +50,8 @@ import {MatTableModule} from '@angular/material/table';
     NavComponent,
     FooterComponent,
     ListCartComponent,
-    PurchaseComponent
+    PurchaseComponent,
+    ListCategoryComponent
 
   ],
   imports: [
@@ -66,7 +69,9 @@ import {MatTableModule} from '@angular/material/table';
     MatFormFieldModule,
     MatInputModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    ReactiveFormsModule,
+    MatSelectModule
     
   ],
   providers: [],
