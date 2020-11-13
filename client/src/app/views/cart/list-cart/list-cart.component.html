@@ -1,7 +1,13 @@
 <div class="container">
     <h1 class="mt-4">Carrinho de Compras</h1>
 
-    <table mat-table [dataSource]="items()">
+    <div *ngIf="items.length == 0" class="text-center d-flex justify-content-center align-items-center flex-column">
+      <i class="material-icons mb-3" style="color: #a3a3a3; font-size: 80px; user-select: none;">remove_shopping_cart</i>
+      
+      <span style="color: #a3a3a3;">Carrinho Vazio</span>
+    </div>
+
+    <table *ngIf="items.length > 0" mat-table [dataSource]="items">
         <ng-container matColumnDef="titulo">
             <th mat-header-cell *matHeaderCellDef> Título </th>
             <td mat-cell *matCellDef="let x"> {{x.titulo}} </td>
@@ -26,17 +32,12 @@
           </ng-container>
         <tr mat-header-row *matHeaderRowDef="cartColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: cartColumns;"></tr>
-    </table><br>
+    </table>
 
-    <h2>Total da Compra: </h2>
-<!-- <mat-nav-list>
-    <mat-list-item  class="itens"  *ngFor="let x of items()">
-        {{x.titulo}}
-    </mat-list-item>
-    <mat-list-item  class="itens"  *ngFor="let x of items()">
-        {{x.edicao}}
-    </mat-list-item>
-    <mat-list-item  class="itens"  *ngFor="let x of items()">
-        {{x.anoPublicacao}}
-    </mat-list-item>
-  </mat-nav-list> -->
+    <div class="mt-4" *ngIf="items.length > 0">
+      <button class="float-right mb-3" (click)="finishPurchase()" mat-raised-button color="primary">
+        Finalizar compra
+      </button>
+
+      <h2>Total: R$ {{ purchase.total }}</h2>
+    </div>
