@@ -8,6 +8,7 @@ import { ListUserComponent } from './views/user/list-user/list-user.component';
 import { EditUserComponent } from './views/user/edit-user/edit-user.component';
 import { ListCartComponent } from './views/cart/list-cart/list-cart.component';
 import { PurchaseComponent } from './views/cart/purchase/purchase.component';
+import { ListCategoryComponent } from './views/category/list-category/list-category.component';
 
 const routes: Routes = [{
     path:'',
@@ -41,6 +42,10 @@ const routes: Routes = [{
   {
     path: 'cart/purchase/:id',
     component: PurchaseComponent
+  },
+  {
+    path: 'category/list',
+    component: ListCategoryComponent
   }
 ];
 
