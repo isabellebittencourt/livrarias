@@ -5,12 +5,19 @@ const bookController = require('../controllers/bookController');
 const userController = require('../controllers/userController');
 const cartController = require('../controllers/shoppingCartController');
 const purchaseController = require('../controllers/purchaseController');
+const categoryController = require('../controllers/categoryController');
 
 router.post('/livro/cadastrar', bookController.add);
 router.get('/livro/listar', bookController.getAll);
 router.get('/livro/buscar/:id', bookController.getById);
 router.delete('/livro/deletar/:id', bookController.delete);
 router.put('/livro/atualizar/:id', bookController.update);
+
+router.post('/categoria/cadastrar', categoryController.add);
+router.get('/categoria/listar', categoryController.getAll);
+router.get('/categoria/buscar/:id', categoryController.getById);
+router.delete('/categoria/deletar/:id', categoryController.delete);
+router.put('/categoria/atualizar/:id', categoryController.update);
 
 router.post('/usuario/cadastrar', userController.add);
 router.get('/usuario/listar', userController.getAll);
