@@ -4,6 +4,9 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { book } from 'src/app/models/book';
 import { BookService } from 'src/app/services/book.service';
 
+import { categoria } from 'src/app/models/categoria';
+import { CategoryService } from 'src/app/services/category.service';
+
 @Component({
   selector: 'app-edit-book',
   templateUrl: './edit-book.component.html',
@@ -18,9 +21,15 @@ export class EditBookComponent implements OnInit {
     anoPublicacao : new Date(),
     preco : 0,
     quantidade : 0,
-    categoria : []
+    categoria : {
+      _id: "",
+      nome: ""
+    }
   }
-  constructor(private route:ActivatedRoute, private router: Router, private service: BookService) { }
+
+  categories: categoria[];
+
+  constructor(private route:ActivatedRoute, private router: Router, private service: BookService, private categoryService: CategoryService) { }
 
   ngOnInit(): void {
     this.book._id = this.route.snapshot.paramMap.get('id');
@@ -28,10 +37,14 @@ export class EditBookComponent implements OnInit {
     this.service.getBook(this.book._id).subscribe(returnedBook => {
       this.book = returnedBook;
     });
+
+    this.categoryService.list().subscribe(categories => {
+      this.categories = categories;
+    });
   }
 
   updateBook() : void{
-      this.service.updateBook(this.book).subscribe((livro) =>{
+      this.service.updateBook(this.book).subscribe(() =>{
         this.router.navigate(['/']);
       })
   }
