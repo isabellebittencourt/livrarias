@@ -34,7 +34,7 @@ class bookController {
     }
 
     async getAll(request, response) {
-        const result = await book.find({})
+        const result = await book.find({}).populate('categoria')
         .catch(() => {
             return response.status(400).json({
                 success: false,
@@ -55,7 +55,7 @@ class bookController {
             });
         }
 
-        const result = await book.findById(id)
+        const result = await book.findById(id).populate('categoria')
         .catch(() => {
             return response.status(400).json({
                 success: false,
