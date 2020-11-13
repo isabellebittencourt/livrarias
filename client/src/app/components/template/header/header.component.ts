@@ -24,5 +24,8 @@ export class HeaderComponent implements OnInit {
   navigationToCart() : void{
     this.router.navigate(['cart/list'])
   }
+  navigationToCategories() : void {
+    this.router.navigate(['category/list'])
+  }
 
 }
