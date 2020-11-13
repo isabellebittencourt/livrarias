@@ -24,6 +24,11 @@ export class ShoppingCartService {
       sessionStorage.setItem("cart",JSON.stringify(this.items))   
       window.location.reload();
   }
-  
+
+  clear() {
+    this.items = [];
+
+    sessionStorage.removeItem('cart');
+  }
 
 }
